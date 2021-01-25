@@ -9,7 +9,7 @@ namespace InhertanceNA21
         {
             A c = new C();
 
-            Console.WriteLine()
+            Console.WriteLine();
 
             var name = c.Name;
 
