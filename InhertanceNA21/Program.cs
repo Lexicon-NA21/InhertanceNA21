@@ -7,16 +7,20 @@ namespace InhertanceNA21
     {
         static void Main(string[] args)
         {
-            A c = new C();
+            FuelVehicle fuelVehicle = new FuelVehicle("Volvo");
+            Vehicle vehicle = new Vehicle("Volvo");
+            Vehicle vehicle2 = new FuelVehicle("Volvo");
 
-            Console.WriteLine();
+            List<Vehicle> vehicles = new List<Vehicle>();
+            vehicles.Add(fuelVehicle);
+            vehicles.Add(vehicle);
+            vehicles.Add(vehicle2);
 
-            var name = c.Name;
-
-            C cc = (C)c;
-            Double[] x = new [] { 1.0 , 2, 3, 4,6 };
-
-            var dict = new Dictionary<string, int>();
+            foreach (Vehicle v in vehicles)
+            {
+                Console.WriteLine(v.Drive(23));
+            }
+            
         }
     }
 }
