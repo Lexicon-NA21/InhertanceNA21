@@ -7,18 +7,22 @@ namespace InhertanceNA21
     {
         static void Main(string[] args)
         {
-            FuelVehicle fuelVehicle = new FuelVehicle("Volvo");
-            Vehicle vehicle = new Vehicle("Volvo");
-            Vehicle vehicle2 = new FuelVehicle("Volvo");
+            FuelVehicle fuelVehicle = new FuelVehicle("Volvo", 100, "ABC123");
+            Vehicle vehicle = new Vehicle("Volvo", "ABC123");
+            Vehicle vehicle2 = new FuelVehicle("Volvo", 100,  "ABC123");
 
-            List<Vehicle> vehicles = new List<Vehicle>();
+            fuelVehicle.FuelLevel = 50;
+            double level = fuelVehicle.FuelLevel;
+
+            List<IDrive> vehicles = new List<IDrive>();
             vehicles.Add(fuelVehicle);
             vehicles.Add(vehicle);
             vehicles.Add(vehicle2);
 
-            foreach (Vehicle v in vehicles)
+            foreach (var v in vehicles)
             {
                 Console.WriteLine(v.Drive(23));
+               // Console.WriteLine(v.Turn());
             }
             
         }
